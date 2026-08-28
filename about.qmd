@@ -4,14 +4,11 @@ title: "About"
 
 ## Background
 
-<!-- CHANGE THIS -->
-
 Write a few paragraphs about yourself here: where you came from before MUSA,
 what drew you to urban spatial analytics, and what you're hoping to do with it.
 
 ## Skills
 
-<!-- CHANGE THIS: update this through the semester as it becomes true -->
 
 - **Languages & Tools:** R, Quarto, Git
 - **Spatial:** (add as you learn)
