@@ -8,6 +8,7 @@ website:
   description: "Public Policy Analytics portfolio"
   navbar:
     title: "Portfolio"
+    pinned: true
     left:
       - href: index.qmd
         text: Home
@@ -20,13 +21,41 @@ website:
     right:
       - icon: github
         href: https://github.com/zyang91/test      # <-- CHANGE THIS
+  page-footer:
+    border: true
+    left: "Zhanchao Yang · MUSA 5080 · University of Pennsylvania"
+    center: "[Style guide](/styleguide.qmd)"
+    right: "Built with [Quarto](https://quarto.org)"
 
 format:
   html:
-    theme: cosmo
+    # Blueprint: a two-mode custom theme built in styles/.
+    #   blueprint-light.scss  drafting paper   (variables)
+    #   blueprint-dark.scss   cyanotype        (variables)
+    #   blueprint-rules.scss  shared rules     (loaded by both)
+    theme:
+      light: [cosmo, styles/blueprint-light.scss, styles/blueprint-rules.scss]
+      dark:  [cosmo, styles/blueprint-dark.scss,  styles/blueprint-rules.scss]
+    include-in-header: styles/fonts.html
     toc: true
+    toc-title: "On this page"
+    toc-depth: 3
     code-fold: false
     code-tools: true
+    code-copy: true
+    code-block-border-left: true
+    highlight-style: arrow
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: false
+    fig-align: center
+    fig-cap-location: margin
+    tbl-cap-location: top
+    grid:
+      sidebar-width: 250px
+      body-width: 860px
+      margin-width: 260px
 
 execute:
   freeze: auto

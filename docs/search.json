@@ -39,42 +39,7 @@
     "href": "data/readme.html",
     "title": "",
     "section": "",
-    "text": "Code\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Welcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions.\n\n\nI’m a student in the MUSA program at Penn. My background is in transportation Planning, and I’m interested in law.\n\n\n\n\nWeekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me\n\n\n\n\n\nEmail: zhanchao@upenn.edu\nGitHub: @zyang91"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Home",
-    "section": "",
-    "text": "I’m a student in the MUSA program at Penn. My background is in transportation Planning, and I’m interested in law."
-  },
-  {
-    "objectID": "index.html#what-youll-find-here",
-    "href": "index.html#what-youll-find-here",
-    "title": "Home",
-    "section": "",
-    "text": "Weekly Notes — what I’m learning each week\nAssignments — analyses completed for the course\nAbout — more background and how to reach me"
-  },
-  {
-    "objectID": "index.html#get-in-touch",
-    "href": "index.html#get-in-touch",
-    "title": "Home",
-    "section": "",
-    "text": "Email: zhanchao@upenn.edu\nGitHub: @zyang91"
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Code\n\n\n\n\n\nData files for MUSA 5080\nDownload assignment data from Canvas and save it here. Do not rename the files! Have a nice day :)"
   },
   {
     "objectID": "about.html",
@@ -103,6 +68,97 @@
     "title": "About",
     "section": "Contact",
     "text": "Contact\n\n\nEmail: your-email@upenn.edu\nGitHub: @your-username"
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Completed assignments for MUSA 5080. New assignments appear here automatically once you add the .qmd file to this folder and render.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zhanchao Yang",
+    "section": "",
+    "text": "Master of Urban Spatial Analytics · University of Pennsylvania\n\nWelcome to my portfolio for MUSA 5080: Public Policy Analytics at the University of Pennsylvania.\nThis site documents my work in the Master of Urban Spatial Analytics program — weekly notes, course assignments, and a final project applying data analysis to urban policy questions."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Zhanchao Yang",
+    "section": "About Me",
+    "text": "About Me\nI’m a student in the MUSA program at Penn. My background is in transportation Planning, and I’m interested in law.\nR Quarto Git tidycensus"
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "Zhanchao Yang",
+    "section": "What You’ll Find Here",
+    "text": "What You’ll Find Here\n\n\nWeekly Notes\nWhat I’m learning each week.\n\n\nAssignments\nAnalyses completed for the course.\n\n\nAbout\nMore background and how to reach me."
+  },
+  {
+    "objectID": "index.html#get-in-touch",
+    "href": "index.html#get-in-touch",
+    "title": "Zhanchao Yang",
+    "section": "Get in Touch",
+    "text": "Get in Touch\n\nEmail: zhanchao@upenn.edu\nGitHub: @zyang91"
+  },
+  {
+    "objectID": "styleguide.html",
+    "href": "styleguide.html",
+    "title": "Style Guide",
+    "section": "",
+    "text": "This page exists to exercise the theme in styles/. Toggle light/dark with the switch in the navbar — the same rules serve both, driven by the --bp-* custom properties each palette file defines."
+  },
+  {
+    "objectID": "styleguide.html#type-scale",
+    "href": "styleguide.html#type-scale",
+    "title": "Style Guide",
+    "section": "Type scale",
+    "text": "Type scale\nBody copy is Inter at 17px with a 1.65 line height. Headings are Fraunces, a variable serif; the SOFT, WONK and opsz axes are set per level, which is why the page title has more character than the section heads. Labels, dates and code use JetBrains Mono.\n\nThird-level heading\nInline code spans sit in a hairline box, and links draw their underline as a background gradient so it can thicken on hover without moving the baseline.\n\nBlockquotes are set as margin notes: italic Fraunces against an orange rule."
+  },
+  {
+    "objectID": "styleguide.html#section-numbering",
+    "href": "styleguide.html#section-numbering",
+    "title": "Style Guide",
+    "section": "Section numbering",
+    "text": "Section numbering\nThe §01, §02 markers to the left of each h2 come from a CSS counter, not from the Markdown. Nothing in a .qmd file has to know its own number, and the table of contents stays clean because the numbers live in a ::before."
+  },
+  {
+    "objectID": "styleguide.html#cards-and-tags",
+    "href": "styleguide.html#cards-and-tags",
+    "title": "Style Guide",
+    "section": "Cards and tags",
+    "text": "Cards and tags\n\n\nAuto-fit grid\n::: {.bp-grid} lays children out at a 210px minimum and lifts them on hover.\n\n\nIndex cards\nListing pages get the same treatment through .quarto-post.\n\n\nTags\n[text]{.bp-tag} renders a small monospace label.\n\n\nspatial census policy"
+  },
+  {
+    "objectID": "styleguide.html#code-and-output",
+    "href": "styleguide.html#code-and-output",
+    "title": "Style Guide",
+    "section": "Code and output",
+    "text": "Code and output\nCode blocks carry a green left rule; printed output gets a recessed strip underneath, so input and output read as two different things.\n\ngrid &lt;- expand.grid(x = 1:3, y = 1:3)\ngrid$dist &lt;- round(sqrt(grid$x^2 + grid$y^2), 2)\nhead(grid, 4)\n\n  x y dist\n1 1 1 1.41\n2 2 1 2.24\n3 3 1 3.16\n4 1 2 2.24"
+  },
+  {
+    "objectID": "styleguide.html#tables",
+    "href": "styleguide.html#tables",
+    "title": "Style Guide",
+    "section": "Tables",
+    "text": "Tables\n\nRuled top and bottom, with a small-caps monospace header.\n\n\n\n\n\n\n\nLayer\nSource\nVintage\n\n\n\n\nTracts\nTIGER/Line\n2023\n\n\nIncome\nACS 5-year\n2019–2023\n\n\nTransit\nSEPTA GTFS\n2025"
+  },
+  {
+    "objectID": "styleguide.html#callouts",
+    "href": "styleguide.html#callouts",
+    "title": "Style Guide",
+    "section": "Callouts",
+    "text": "Callouts\n\n\n\n\n\n\nNote\n\n\n\nCallout titles are set in monospace small caps, squared off to match the drafting look.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nBorder radius across the whole theme is 2px — a drawing has corners, not rounded pills."
+  },
+  {
+    "objectID": "styleguide.html#where-things-live",
+    "href": "styleguide.html#where-things-live",
+    "title": "Style Guide",
+    "section": "Where things live",
+    "text": "Where things live\n\nstyles/blueprint-light.scss — paper palette and Bootstrap variables\nstyles/blueprint-dark.scss — cyanotype palette, same variable names\nstyles/blueprint-rules.scss — every rule, shared by both modes\nstyles/fonts.html — the three typefaces, pulled in via include-in-header"
   },
   {
     "objectID": "weekly-notes/index.html",

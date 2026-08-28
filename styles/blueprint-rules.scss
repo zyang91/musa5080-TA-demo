@@ -1,0 +1,341 @@
+/*-- scss:rules --*/
+// ===========================================================================
+// BLUEPRINT — shared rules
+// Loaded after both blueprint-light.scss and blueprint-dark.scss. Everything
+// here is written against the --bp-* custom properties those files define, so
+// one rule set serves both modes.
+// ===========================================================================
+
+// --- 1. graph paper --------------------------------------------------------
+// A 24px drafting grid, with a heavier line every 5th cell. Fixed attachment
+// so the grid stays put while the page scrolls, like paper under tracing film.
+body {
+  background-color: var(--bp-paper);
+  background-image:
+    linear-gradient(var(--bp-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-grid) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+  background-attachment: fixed;
+  font-feature-settings: "kern" 1, "liga" 1, "cv05" 1;
+}
+
+// Content sits on an opaque sheet so body text never fights the grid.
+main.content {
+  background: var(--bp-paper);
+  padding: 1.25rem 2rem 3rem;
+  border-left: 1px solid var(--bp-rule);
+  border-right: 1px solid var(--bp-rule);
+  box-shadow: 0 1px 30px var(--bp-shadow);
+}
+
+// --- 2. navbar -------------------------------------------------------------
+.navbar {
+  border-bottom: 3px solid var(--bp-orange);
+  box-shadow: none;
+}
+.navbar-brand,
+.navbar .navbar-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.navbar-nav .nav-link {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-bottom: 0.2rem !important;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.18s ease, opacity 0.18s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  border-bottom-color: var(--bp-orange);
+}
+
+// --- 3. title block --------------------------------------------------------
+// A drafting-sheet title bar: hairline rule above, wash behind, and a small
+// monospace slug in the corner the way a drawing carries a sheet number.
+header#title-block-header {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 2.25rem 0 1.25rem;
+  border-top: 1px solid var(--bp-rule);
+  border-bottom: 1px solid var(--bp-rule);
+  background: var(--bp-hero-wash);
+}
+header#title-block-header .title {
+  font-size: clamp(2.1rem, 5vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 40;
+  margin-bottom: 0.35rem;
+}
+header#title-block-header .subtitle,
+header#title-block-header .description {
+  font-size: 1.02rem;
+  color: var(--bp-ink-soft);
+  max-width: 46ch;
+}
+header#title-block-header::after {
+  content: "MUSA 5080";
+  position: absolute;
+  top: 0.6rem;
+  right: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--bp-ink-soft);
+  opacity: 0.75;
+}
+.quarto-title-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+// --- 4. headings -----------------------------------------------------------
+// h2s are numbered like plan sheets (§ 01, § 02 …) via a CSS counter, so the
+// numbering never has to live in the Markdown.
+main.content { counter-reset: bp-section; }
+
+main.content h2 {
+  counter-increment: bp-section;
+  position: relative;
+  margin-top: 3rem;
+  padding-top: 0.9rem;
+  padding-left: 3.4rem;
+  border-top: 1px solid var(--bp-rule);
+  font-variation-settings: "SOFT" 0, "WONK" 1, "opsz" 24;
+}
+main.content h2::before {
+  content: "§" counter(bp-section, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--bp-orange);
+}
+main.content h3 {
+  margin-top: 2rem;
+  color: var(--bp-blue);
+  letter-spacing: -0.01em;
+}
+
+// --- 5. links --------------------------------------------------------------
+// Underline drawn as a background gradient so it can animate thickness on
+// hover without shifting the text baseline.
+main.content a:not(.btn):not(.quarto-title-meta a) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--bp-orange), var(--bp-orange));
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.18s ease, color 0.18s ease;
+}
+main.content a:not(.btn):hover {
+  color: var(--bp-orange);
+  background-size: 100% 3px;
+}
+
+// --- 6. listing cards ("index cards") --------------------------------------
+.quarto-listing { margin-top: 1.5rem; }
+
+.quarto-post {
+  position: relative;
+  background: var(--bp-card);
+  border: 1px solid var(--bp-rule);
+  border-left: 3px solid var(--bp-blue);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1rem;
+  transition: transform 0.16s ease, box-shadow 0.16s ease,
+              border-left-color 0.16s ease;
+}
+.quarto-post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--bp-shadow);
+  border-left-color: var(--bp-orange);
+}
+.quarto-post .listing-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.quarto-post .listing-title a { background-image: none; }
+.quarto-post .listing-date,
+.quarto-post .metadata {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bp-ink-soft);
+}
+.quarto-post .listing-description {
+  color: var(--bp-ink-soft);
+  font-size: 0.95rem;
+}
+
+// --- 7. code ---------------------------------------------------------------
+div.sourceCode {
+  border: 1px solid var(--bp-rule);
+  border-left: 3px solid var(--bp-green);
+  border-radius: 2px;
+}
+div.sourceCode pre.sourceCode {
+  padding: 0.9rem 1rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+code:not(.sourceCode) {
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--bp-rule);
+  border-radius: 2px;
+  font-size: 0.88em;
+}
+// R output blocks read as a printed strip taped under the code.
+.cell-output pre {
+  border-left: 3px solid var(--bp-rule);
+  background: var(--bp-paper-deep);
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+}
+.code-tools-button, .code-copy-button { opacity: 0.6; }
+
+// --- 8. callouts -----------------------------------------------------------
+.callout {
+  border-radius: 2px !important;
+  border-left-width: 3px !important;
+  box-shadow: none !important;
+}
+.callout .callout-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.74rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+// --- 9. blockquote as a margin note ---------------------------------------
+main.content blockquote {
+  border-left: 2px solid var(--bp-orange);
+  margin-left: 0;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.08rem;
+  font-style: italic;
+  color: var(--bp-ink-soft);
+}
+
+// --- 10. tables ------------------------------------------------------------
+main.content table {
+  font-size: 0.92rem;
+  border-top: 2px solid var(--bp-ink);
+  border-bottom: 2px solid var(--bp-ink);
+}
+main.content thead th {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--bp-rule) !important;
+}
+
+// --- 11. table of contents -------------------------------------------------
+#TOC, nav[role="doc-toc"] {
+  font-size: 0.82rem;
+  border-left: 1px solid var(--bp-rule);
+  padding-left: 1rem;
+}
+#TOC > h2, nav[role="doc-toc"] > h2 {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.66rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border: 0;
+  padding: 0;
+  margin-bottom: 0.6rem;
+}
+nav[role="doc-toc"] ul > li > a.active { font-weight: 600; }
+
+// --- 12. footer ------------------------------------------------------------
+.nav-footer {
+  border-top: 3px solid var(--bp-orange);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+.nav-footer a { text-decoration: none; }
+
+// ===========================================================================
+// 13. Opt-in helpers usable from any .qmd
+// ===========================================================================
+
+// ::: {.bp-hero} — a full-bleed drafting panel for the top of a page.
+.bp-hero {
+  margin: 0 -2rem 2.5rem;
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid var(--bp-rule);
+  background:
+    var(--bp-hero-wash),
+    repeating-linear-gradient(
+      -45deg, transparent 0 11px, var(--bp-grid) 11px 12px
+    );
+}
+.bp-hero p { max-width: 54ch; font-size: 1.08rem; }
+.bp-hero .bp-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--bp-orange);
+  margin-bottom: 0.5rem;
+}
+
+// ::: {.bp-grid} — an auto-fitting card grid for link lists / stats.
+.bp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.bp-grid > * {
+  background: var(--bp-card);
+  border: 1px solid var(--bp-rule);
+  border-top: 3px solid var(--bp-blue);
+  padding: 1rem 1.1rem;
+  transition: transform 0.16s ease, border-top-color 0.16s ease;
+}
+.bp-grid > *:hover {
+  transform: translateY(-2px);
+  border-top-color: var(--bp-orange);
+}
+.bp-grid h3 { margin-top: 0; font-size: 1.05rem; }
+.bp-grid p  { margin-bottom: 0; font-size: 0.9rem; color: var(--bp-ink-soft); }
+
+// [text]{.bp-tag} — a small monospace label.
+.bp-tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--bp-rule);
+  color: var(--bp-ink-soft);
+  background: var(--bp-paper-deep);
+}
+
+// --- 14. motion & small screens -------------------------------------------
+@media (max-width: 767px) {
+  main.content { padding: 1rem 1.1rem 2rem; border-left: 0; border-right: 0; }
+  .bp-hero { margin-left: -1.1rem; margin-right: -1.1rem; padding: 1.75rem 1.1rem; }
+  main.content h2 { padding-left: 0; }
+  main.content h2::before { position: static; display: block; margin-bottom: 0.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  .quarto-post:hover, .bp-grid > *:hover { transform: none; }
+}

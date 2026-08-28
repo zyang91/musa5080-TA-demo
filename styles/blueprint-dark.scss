@@ -1,0 +1,67 @@
+/*-- scss:defaults --*/
+// ===========================================================================
+// BLUEPRINT — dark ("cyanotype")
+// The same drawing, printed on blue. Shares every rule in blueprint-rules.scss.
+// ===========================================================================
+
+// --- palette --------------------------------------------------------------
+$bp-paper:      #0e131a;
+$bp-paper-deep: #141b24;
+$bp-ink:        #e7e3d9;
+$bp-ink-soft:   #9aa5b4;
+$bp-rule:       #253141;
+$bp-blue:       #7fb2e5;
+$bp-blue-deep:  #a8ccf0;
+$bp-orange:     #f0a868;
+$bp-green:      #74c69d;
+
+// --- bootstrap / quarto ---------------------------------------------------
+$body-bg:      $bp-paper;
+$body-color:   $bp-ink;
+$primary:      $bp-blue;
+$secondary:    $bp-ink-soft;
+$link-color:   $bp-blue-deep;
+$border-color: $bp-rule;
+
+$font-family-sans-serif: "Inter", -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace:  "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+$headings-font-family:   "Fraunces", Georgia, "Times New Roman", serif;
+$headings-font-weight:   600;
+$headings-color:         #f3efe6;
+
+$font-size-root: 17px;
+$line-height-base: 1.65;
+$h1-font-size: 2.9rem;
+$h2-font-size: 1.9rem;
+$h3-font-size: 1.35rem;
+$border-radius: 2px;
+
+$navbar-bg: #080c12;
+$navbar-fg: #d8d3c7;
+$navbar-hl: $bp-orange;
+
+$code-bg:    #1a2230;
+$code-color: $bp-orange;
+$code-block-bg: #131a24;
+
+$card-bg: $bp-paper-deep;
+$toc-color: $bp-ink-soft;
+$toc-active-border: $bp-orange;
+$footer-bg: #080c12;
+$footer-fg: #8e97a5;
+
+/*-- scss:rules --*/
+:root {
+  --bp-paper:      #{$bp-paper};
+  --bp-paper-deep: #{$bp-paper-deep};
+  --bp-ink:        #{$bp-ink};
+  --bp-ink-soft:   #{$bp-ink-soft};
+  --bp-rule:       #{$bp-rule};
+  --bp-blue:       #{$bp-blue};
+  --bp-orange:     #{$bp-orange};
+  --bp-green:      #{$bp-green};
+  --bp-grid:       rgba(127, 178, 229, 0.10);
+  --bp-card:       #{$bp-paper-deep};
+  --bp-shadow:     rgba(0, 0, 0, 0.45);
+  --bp-hero-wash:  linear-gradient(180deg, rgba(127,178,229,0.07), rgba(127,178,229,0));
+}

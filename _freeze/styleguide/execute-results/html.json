@@ -1,0 +1,15 @@
+{
+  "hash": "97ce7ea071e8b98e8da55fa50bccc354",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Style Guide\"\ndescription: \"Every element the Blueprint theme styles, on one page.\"\n---\n\nThis page exists to exercise the theme in `styles/`. Toggle light/dark with the\nswitch in the navbar — the same rules serve both, driven by the `--bp-*`\ncustom properties each palette file defines.\n\n## Type scale\n\nBody copy is Inter at 17px with a 1.65 line height. Headings are Fraunces, a\nvariable serif; the `SOFT`, `WONK` and `opsz` axes are set per level, which is\nwhy the page title has more character than the section heads. Labels, dates and\ncode use JetBrains Mono.\n\n### Third-level heading\n\nInline `code spans` sit in a hairline box, and [links draw their underline as a\nbackground gradient](https://quarto.org) so it can thicken on hover without\nmoving the baseline.\n\n> Blockquotes are set as margin notes: italic Fraunces against an orange rule.\n\n## Section numbering\n\nThe `§01`, `§02` markers to the left of each `h2` come from a CSS counter, not\nfrom the Markdown. Nothing in a `.qmd` file has to know its own number, and the\ntable of contents stays clean because the numbers live in a `::before`.\n\n## Cards and tags\n\n::: {.bp-grid}\n::: {}\n### Auto-fit grid\n`::: {.bp-grid}` lays children out at a 210px minimum and lifts them on hover.\n:::\n\n::: {}\n### Index cards\nListing pages get the same treatment through `.quarto-post`.\n:::\n\n::: {}\n### Tags\n`[text]{.bp-tag}` renders a small monospace label.\n:::\n:::\n\n[spatial]{.bp-tag} [census]{.bp-tag} [policy]{.bp-tag}\n\n## Code and output\n\nCode blocks carry a green left rule; printed output gets a recessed strip\nunderneath, so input and output read as two different things.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ngrid <- expand.grid(x = 1:3, y = 1:3)\ngrid$dist <- round(sqrt(grid$x^2 + grid$y^2), 2)\nhead(grid, 4)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  x y dist\n1 1 1 1.41\n2 2 1 2.24\n3 3 1 3.16\n4 1 2 2.24\n```\n\n\n:::\n:::\n\n\n## Tables\n\n| Layer | Source | Vintage |\n|-------|--------|---------|\n| Tracts | TIGER/Line | 2023 |\n| Income | ACS 5-year | 2019–2023 |\n| Transit | SEPTA GTFS | 2025 |\n\n: Ruled top and bottom, with a small-caps monospace header. {tbl-colwidths=\"[30,45,25]\"}\n\n## Callouts\n\n::: {.callout-note}\nCallout titles are set in monospace small caps, squared off to match the\ndrafting look.\n:::\n\n::: {.callout-warning}\nBorder radius across the whole theme is 2px — a drawing has corners, not\nrounded pills.\n:::\n\n## Where things live\n\n- `styles/blueprint-light.scss` — paper palette and Bootstrap variables\n- `styles/blueprint-dark.scss` — cyanotype palette, same variable names\n- `styles/blueprint-rules.scss` — every rule, shared by both modes\n- `styles/fonts.html` — the three typefaces, pulled in via `include-in-header`\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
